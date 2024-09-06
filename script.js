@@ -318,7 +318,7 @@ function preloadImage(url) {
 preloadImage(quizDataSimple[currentImageSimple+1].src);
 
 */
-Cache.add(quizDataSimple[currentImageSimple+1].src);
+cache.add(quizDataSimple[currentImageSimple+1].src);
 
 
 
