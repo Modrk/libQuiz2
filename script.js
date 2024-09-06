@@ -318,8 +318,8 @@ function preloadImage(url) {
 preloadImage(quizDataSimple[currentImageSimple+1].src);
 
 */
-
-caches.add(quizDataSimple[currentImageSimple+1].src);
+caches.add = quizDataSimple[currentImageSimple+1].src;
+//caches.add();
 
 
 
