@@ -297,31 +297,15 @@ let scoreSimple = 0;
 let scoreAdvanced = 0;
 let wrongAnswersSimple;
 let wrongAnswersAdvanced;
-/*
-preloadImage = async (url) =>{
-    const response = await fetch(url)
-    const image = await response.blob()
-    imageArr.push(image)
-}
 
-
-const imgArray = [];
-imgArray.push(fetch(quizDataSimple[currentImageSimple+1].src));
-
-const cache = document.createElement("div");
+const imageCache = [];
 function preloadImage(url) {
     let nimg = new Image();
     nimg.src = url;
-    cache.appendChild(nimg);
+    imageCache.push(nimg);
 }
 
 preloadImage(quizDataSimple[currentImageSimple+1].src);
-
-*/
-caches.add = quizDataSimple[currentImageSimple+1].src;
-//caches.add();
-
-
 
 
 function showResults() {
@@ -378,9 +362,7 @@ function quiz(quizData) {
             img.src = quizData[currentImage+1].src;
 
             if (currentImage < quizData.length - 2) {
-                //imgArray.push(fetch(quizDataSimple[currentImageSimple+2].src));
-                //preloadImage(quizData[currentImage+2].src);
-                cache.add(quizData[currentImage+2].src);
+                preloadImage(quizData[currentImage+2].src);
             }
             currentImage++;
         } else {
@@ -404,9 +386,7 @@ function nextLevel() {
     qCounter.innerText = ++counter;
     document.querySelector('input[name="answer"]:checked').checked = false;
     img.src = quizDataAdvanced[currentImageAdvanced].src;
-    //imgArray.push(fetch(quizDataSimple[currentImageAdvanced+1]));
-    //preloadImage(quizDataAdvanced[currentImageAdvanced+1].src);
-    cache.add(quizDataAdvanced[currentImageAdvanced+1].src);
+    preloadImage(quizDataAdvanced[currentImageAdvanced+1].src);
     advanced = true;
     currentImage = 0;
     score = 0;
