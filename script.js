@@ -318,7 +318,7 @@ function preloadImage(url) {
 preloadImage(quizDataSimple[currentImageSimple+1].src);
 
 */
-//Cache.add(quizDataSimple[currentImageSimple+1].src);
+cache.add(quizDataSimple[currentImageSimple+1].src);
 
 
 
@@ -379,7 +379,7 @@ function quiz(quizData) {
             if (currentImage < quizData.length - 2) {
                 //imgArray.push(fetch(quizDataSimple[currentImageSimple+2].src));
                 //preloadImage(quizData[currentImage+2].src);
-                Cache.add(quizData[currentImage+2].src);
+                cache.add(quizData[currentImage+2].src);
             }
             currentImage++;
         } else {
@@ -405,7 +405,7 @@ function nextLevel() {
     img.src = quizDataAdvanced[currentImageAdvanced].src;
     //imgArray.push(fetch(quizDataSimple[currentImageAdvanced+1]));
     //preloadImage(quizDataAdvanced[currentImageAdvanced+1].src);
-    Cache.add(quizDataAdvanced[currentImageAdvanced+1].src);
+    cache.add(quizDataAdvanced[currentImageAdvanced+1].src);
     advanced = true;
     currentImage = 0;
     score = 0;
