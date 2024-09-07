@@ -16,9 +16,7 @@ const quizDataSimple = [
         src: "./images/simpleImages/03.jpg",
         correct: 1,
         explanation: "The nipple on these wet specimens is swollen, making them somewhat special."
-    }
-    /*
-    ,
+    },
     {
         id: 3,
         src: "./images/simpleImages/04.jpg",
@@ -121,7 +119,6 @@ const quizDataSimple = [
         correct: 1,
         explanation: "Stipe is light colored and fibrous. Cap is bell shaped, has a nipple and a darker edge."
     }
-    */
 ];
 
 
@@ -143,9 +140,7 @@ const quizDataAdvanced = [
         src: "./images/advancedImages/03.jpg",
         correct: 1,
         explanation: "This is very white in color, which makes it unusual. It has a nipple, bell shaped cap, white bended stipe. Albino lib."
-    }
-    /*
-    ,
+    },
     {
         id: 3,
         src: "./images/advancedImages/04.jpg",
@@ -248,7 +243,6 @@ const quizDataAdvanced = [
         correct: 0,
         explanation: "Panaeolus"
     }
-    */
 ];
 
 
@@ -383,8 +377,6 @@ function quiz(quizData) {
 
 function nextLevel() {
     levelShow.innerText = "Advanced level";
-    qCounter.innerText = ++counter;
-    document.querySelector('input[name="answer"]:checked').checked = false;
     img.src = quizDataAdvanced[currentImageAdvanced].src;
     preloadImage(quizDataAdvanced[currentImageAdvanced+1].src);
     advanced = true;
