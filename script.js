@@ -293,6 +293,7 @@ let wrongAnswersSimple;
 let wrongAnswersAdvanced;
 
 const imageCache = [];
+/*
 function preloadImage(url) {
     let nimg = new Image();
     nimg.src = url;
@@ -300,6 +301,13 @@ function preloadImage(url) {
 }
 
 preloadImage(quizDataSimple[currentImageSimple+1].src);
+*/
+
+fetch(quizDataSimple[currentImageSimple+1].src)
+  .then(response => response.blob())
+  .then(blob => {
+    imageCache.push(blob);
+  });
 
 function showResults() {
     quizForm.classList.add("d-none", "invisible");
