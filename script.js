@@ -241,7 +241,7 @@ const quizDataAdvanced = [
         id: 19,
         src: "./images/advancedImages/20.jpg",
         correct: 0,
-        explanation: "Panaeolus"
+        explanation: "Classic Panaeolus but these can cheat the untrained eye."
     }
 ];
 
