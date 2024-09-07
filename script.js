@@ -363,7 +363,12 @@ function quiz(quizData) {
             img.src = quizData[currentImage+1].src;
 
             if (currentImage < quizData.length - 2) {
-                preloadImage(quizData[currentImage+2].src);
+                //preloadImage(quizData[currentImage+2].src);
+                fetch(quizData[currentImage+2].src)
+                    .then(response => response.blob())
+                    .then(blob => {
+                        imageCache.push(blob);
+                    });
             }
             currentImage++;
         } else {
@@ -385,7 +390,12 @@ function quiz(quizData) {
 function nextLevel() {
     levelShow.innerText = "Advanced level";
     img.src = quizDataAdvanced[currentImageAdvanced].src;
-    preloadImage(quizDataAdvanced[currentImageAdvanced+1].src);
+    //preloadImage(quizDataAdvanced[currentImageAdvanced+1].src);
+    fetch(quizDataAdvanced[currentImageAdvanced+1].src)
+        .then(response => response.blob())
+        .then(blob => {
+            imageCache.push(blob);
+        });
     advanced = true;
     currentImage = 0;
     score = 0;
