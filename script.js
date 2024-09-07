@@ -57,7 +57,7 @@ const quizDataSimple = [
         id: 9,
         src: "./images/simpleImages/10.jpg",
         correct: 0,
-        explanation: "Probably at least two species here, colors are way off on both cap and stem. Probably Galerina/Conocybe/Mycena."
+        explanation: "Probably at least two species here, colors are way off on both cap and stipe. Probably Galerina/Conocybe/Mycena."
     },
     {
         id: 10,
@@ -175,7 +175,7 @@ const quizDataAdvanced = [
         id: 8,
         src: "./images/advancedImages/09.jpg",
         correct: 0,
-        explanation: "Protostropharia semiglobata is probably the species for these. They are very slimy and too big to be libs."
+        explanation: "Protostropharia semiglobata is probably the species for these. They are very slimy."
     },
     {
         id: 9,
@@ -300,7 +300,6 @@ function preloadImage(url) {
 }
 
 preloadImage(quizDataSimple[currentImageSimple+1].src);
-
 
 function showResults() {
     quizForm.classList.add("d-none", "invisible");
